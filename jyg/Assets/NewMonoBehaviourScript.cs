@@ -7,10 +7,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public float moveSpeed = 7f;
     public float jumpForce = 7f;
     private Rigidbody2D rb;
+    private Animator myAnimator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
+        myAnimator.SetBool("move", false);
     }
 
     public void OnMove(InputValue value)
